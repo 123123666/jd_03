@@ -66,7 +66,7 @@ $.drip = 0;
       await $.wait(500);
       const endInfo = await getTaskList();
       getMessage(endInfo, startInfo);
-      await submitInviteId(userName);
+      //await submitInviteId(userName);
       await $.wait(500);
       //await createAssistUser();
     }
