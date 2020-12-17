@@ -38,4 +38,5 @@ jobs:
                   DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN || github.event.client_payload.DD_BOT_TOKEN }}
                   DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET || github.event.client_payload.DD_BOT_SECRET }}
                   IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY || github.event.client_payload.IGOT_PUSH_KEY }}
-                  SYNCURL: https://github.com/MoPoQAQ/Script/raw/main/Me/jx_cfd.js
+                  # SYNCURL: https://github.com/MoPoQAQ/Script/raw/main/Me/jx_cfd.js
+                  SYNCURL: https://raw.githubusercontent.com/Andecy/jd_02/main/myjs/jx_cfd.js

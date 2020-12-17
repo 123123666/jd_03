@@ -48,7 +48,6 @@ $.drip = 0;
   if (!getCookies()) return;
   for (let i = 0; i < $.cookieArr.length; i++) {
     $.currentCookie = $.cookieArr[i];
-    $.log(`\n开始【京东token${i + 1}】`+$.tokens[i]);
     $.currentToken = JSON.parse($.tokens[i]);
     $.drip = 0;
     if ($.currentCookie) {
