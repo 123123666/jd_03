@@ -29,7 +29,7 @@
 const $ = new Env('京喜农场');
 const JD_API_HOST = 'https://wq.jd.com/';
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
-$.tokens = [$.getdata('jxnc_token1') || '{}', $.getdata('jxnc_token2') || '{}'];
+$.tokens = [$.getdata('jxnc_token1') || '{}', $.getdata('jxnc_token2') || '{}', $.getdata('jxnc_token3') || '{}', $.getdata('jxnc_token4') || '{}'];
 $.showLog = $.getdata('nc_showLog') ? $.getdata('nc_showLog') === 'true' : false;
 $.openUrl = `openjd://virtual?params=${encodeURIComponent(
   '{ "category": "jump", "des": "m", "url": "https://wqsh.jd.com/sns/201912/12/jxnc/detail.html?ptag=7155.9.32&smp=b47f4790d7b2a024e75279f55f6249b9&active=jdnc_1_chelizi1205_2"}',
@@ -67,9 +67,9 @@ $.drip = 0;
       await $.wait(500);
       const endInfo = await getTaskList();
       getMessage(endInfo, startInfo);
-      //await submitInviteId(userName);
+      await submitInviteId(userName);
       await $.wait(500);
-      //await createAssistUser();
+      await createAssistUser();
     }
   }
   await showMsg();
@@ -81,7 +81,7 @@ function getCookies() {
   if ($.isNode()) {
     $.cookieArr = Object.values(jdCookieNode);
   } else {
-    $.cookieArr = [$.getdata('CookieJD') || '', $.getdata('CookieJD2') || ''];
+    $.cookieArr = [$.getdata('CookieJD') || '', $.getdata('CookieJD2') || '', $.getdata('CookieJD3') || '', $.getdata('CookieJD4') || ''];
   }
   if (!$.cookieArr[0]) {
     $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/', {
